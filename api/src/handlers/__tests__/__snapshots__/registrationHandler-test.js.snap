@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`registrationHandler should throw if the data is incorrect 1`] = `
+Object {
+  "errors": Object {
+    "email": "Email is required",
+    "password": "Please provide password",
+    "user_name": "Please provide your name",
+  },
+}
+`;

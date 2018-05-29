@@ -1,0 +1,36 @@
+query StatsQuery {
+  stats {
+    active_users_today
+    traffic_stats {
+      type
+      count
+      traffic
+    }
+    file_type_usage {
+      type
+      count
+    }
+    policy_usage {
+      type
+      count
+    }
+    encryption_status {
+      encrypted_files
+      not_encrypted_files
+    }
+    sync_operations_status {
+      type
+      count
+    }
+    used_storages {
+      name
+      count
+      percentage
+    }
+    usage_last_week {
+      day
+      count
+      traffic
+    }
+  }
+}

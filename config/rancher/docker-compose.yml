@@ -1,0 +1,37 @@
+version: "2"
+
+services:
+  app:
+    image: 767291032449.dkr.ecr.eu-central-1.amazonaws.com/crosscloud:${DOCKER_LABEL}
+    labels:
+      io.rancher.container.pull_image: always
+      cc_app: true
+    restart: on-failure
+    links:
+      - webdav
+    external_links:
+      - postgres/proxy:postgres
+      - redis/redis:redis
+    environment:
+      - "APP_ROOT=${APP_ROOT}"
+      - "APP_UPDATE_CHANNEL=${APP_UPDATE_CHANNEL}"
+      - "DATABASE_URL=${DATABASE_URL}"
+      - "MAILJET_API_KEY=${MAILJET_API_KEY}"
+      - "MAILJET_API_SECRET=${MAILJET_API_SECRET}"
+      - "MAILJET_SENDER_EMAIL=${MAILJET_SENDER_EMAIL}"
+      - "REDIS_URL=${REDIS_URL}"
+      - "SECRET_KEY=${SECRET_KEY}"
+
+  webdav:
+    image: 767291032449.dkr.ecr.eu-central-1.amazonaws.com/crosscloud-webdav:${DOCKER_LABEL}
+    labels:
+      io.rancher.container.pull_image: always
+      cc_app_webdav: true
+    links:
+      - app
+    restart: on-failure
+    environment:
+      - "CC_ADMIN_CONSOLE_GRAPHQL_URL=http://app:3030/graphql"
+      - "PORT=3000"
+      - "SECRET_KEY=${SECRET_KEY}"
+      - "SENTRY_DSN=${WEBDAV_SENTRY_DSN}"

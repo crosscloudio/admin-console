@@ -1,0 +1,15 @@
+version: '2'
+services:
+  app:
+    scale: 1
+    lb_config:
+      port_rules:
+      - target_port: 3030
+        hostname: ${HOSTNAME}
+  webdav:
+    scale: 1
+    lb_config:
+      port_rules:
+      - target_port: 3000
+        hostname: ${HOSTNAME}
+        path: "/webdav/"

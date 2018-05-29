@@ -1,0 +1,24 @@
+#import "./ContactInfo.graphql"
+#import "./EnabledStorageTypes.graphql"
+#import "./LicensingInfo.graphql"
+#import "./OnboardingInfo.graphql"
+
+query CurrentUserQuery {
+  currentUser {
+    id
+    email
+    name
+    roles
+    ...OnboardingInfo
+
+    organization {
+      id
+      display_name
+      is_resold
+      logging_enabled
+      ...ContactInfo
+      ...EnabledStorageTypes
+      ...LicensingInfo
+    }
+  }
+}

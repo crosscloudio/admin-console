@@ -1,0 +1,22 @@
+.Step p {
+    margin-top: 10px;
+}
+.Step button[disabled] {
+    opacity: 1 !important;
+    filter: alpha(opacity=100) !important;
+}
+.Step {
+    text-align: center;
+    position: relative;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+.Step__btn-circle {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    padding: 6px 0;
+    font-size: 12px;
+    line-height: 1.428571429;
+    border-radius: 15px;
+}

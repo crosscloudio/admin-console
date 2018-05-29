@@ -1,0 +1,3 @@
+mutation DeletePolicyMutation($id: String!) {
+  deletePolicy(id: $id)
+}

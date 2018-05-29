@@ -1,0 +1,15 @@
+query SharesQuery($user_id: String) {
+  shares(user_id: $user_id) {
+    id
+    name
+    storage_type
+    created_at
+    updated_at
+    users {
+      id
+      email
+      name
+    }
+    encrypted
+  }
+}

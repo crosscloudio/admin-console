@@ -1,0 +1,6 @@
+mutation SetLoggingEnabled($enable: Boolean!) {
+  setLoggingEnabled(enable: $enable) {
+    id
+    logging_enabled
+  }
+}

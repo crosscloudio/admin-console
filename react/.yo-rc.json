@@ -1,0 +1,8 @@
+{
+  "generator-react-webpack": {
+    "appName": "crossCloudAdminConsole",
+    "style": "less",
+    "postcss": true,
+    "generatedWithVersion": 3
+  }
+}

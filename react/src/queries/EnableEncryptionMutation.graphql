@@ -1,0 +1,18 @@
+#import "./EncryptionData.graphql"
+
+mutation EnableEncryptionMutation(
+  $master_key: String!,
+  $encrypt_external_shares: Boolean!,
+  # not yet supported
+  # $encrypt_public_shares: Boolean!,
+  $csps_settings: [CspEncryptionSettingsInput]!,
+) {
+  enableEncryption(
+    master_key: $master_key,
+    encrypt_external_shares: $encrypt_external_shares,
+    # encrypt_public_shares: $encrypt_public_shares,
+    csps_settings: $csps_settings
+  ) {
+    ...EncryptionData
+  }
+}

@@ -1,0 +1,4 @@
+fragment EnabledStorageTypes on Organization {
+  id
+  enabled_storage_types
+}

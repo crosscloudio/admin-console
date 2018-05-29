@@ -1,0 +1,21 @@
+query ActivityLogsQuery($user_id: String, $before: String) {
+  activityLogs(user_id: $user_id, before: $before) {
+    entries {
+      id
+      encrypted
+      path
+      status
+      storage_id
+      timestamp
+      type
+      user {
+        id
+        email
+      }
+    }
+    pageInfo {
+      endCursor
+      hasNextPage
+    }
+  }
+}

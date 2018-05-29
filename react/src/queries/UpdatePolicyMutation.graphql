@@ -1,0 +1,9 @@
+mutation UpdatePolicyMutation($id: String!, $input: PolicyInput!) {
+  updatePolicy(id: $id, input: $input) {
+    id
+    name
+    type
+    criteria
+    is_enabled
+  }
+}

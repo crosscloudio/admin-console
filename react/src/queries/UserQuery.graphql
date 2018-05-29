@@ -1,0 +1,22 @@
+#import "./CspData.graphql"
+
+query UserQuery($id: String!) {
+  user(id: $id) {
+    id
+    email
+    name
+    is_enabled
+    last_request_ip
+    last_request_time
+    public_key
+    csps {
+      ...CspData
+    }
+    roles
+    sync_rules {
+      id
+      path
+      csp_ids
+    }
+  }
+}

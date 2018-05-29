@@ -1,0 +1,73 @@
+{
+  "name": "adminconsole-api",
+  "private": true,
+  "version": "0.1.1",
+  "scripts": {
+    "integration-tests": "knex migrate:latest && jest --forceExit --runInBand --testPathPattern integration/ integration/test.js",
+    "test": "jest --forceExit --testPathPattern __tests__",
+    "watch": "nodemon --exec babel-node --watch src/ src/"
+  },
+  "dependencies": {
+    "babel-cli": "^6.22.2",
+    "babel-plugin-transform-class-properties": "^6.22.0",
+    "babel-plugin-transform-object-rest-spread": "^6.22.0",
+    "babel-polyfill": "^6.22.0",
+    "babel-preset-env": "^1.1.8",
+    "base32": "^0.0.6",
+    "basic-auth": "^2.0.0",
+    "bcryptjs": "^2.4.0",
+    "copyfiles": "^1.2.0",
+    "dataloader": "^1.2.0",
+    "es6-error": "^4.0.1",
+    "graphql": "^0.9.2",
+    "graphql-date": "^1.0.3",
+    "graphql-server-koa": "^0.6.0",
+    "graphql-tools": "^0.11.0",
+    "graphql-type-json": "^0.1.4",
+    "handlebars": "^4.0.6",
+    "htmlescape": "^1.1.1",
+    "jsonwebtoken": "^7.2.1",
+    "knex": "^0.12.9",
+    "koa": "^2.2.0",
+    "koa-bodyparser": "^3.2.0",
+    "koa-bunyan-logger": "^2.0.0-pre1",
+    "koa-convert": "^1.2.0",
+    "koa-jwt": "^2.1.0",
+    "koa-logger": "^2.0.1",
+    "koa-mount": "^2.0.0",
+    "koa-proxies": "^0.3.0",
+    "koa-route": "^3.2.0",
+    "koa-send": "^3.3.0",
+    "koa-static-cache": "^4.1.1",
+    "lodash": "^4.17.4",
+    "mime-db": "^1.28.0",
+    "node-fetch": "^1.6.3",
+    "nodemailer": "^4.0.1",
+    "npm": "^4.1.1",
+    "pg": "^6.1.2",
+    "ratelimiter": "^3.0.3",
+    "raven": "^2.1.2",
+    "read": "^1.0.7",
+    "redis": "^2.7.1",
+    "semver": "^5.3.0",
+    "source-map-support": "^0.4.10",
+    "thenify": "^3.2.1",
+    "uuid": "^3.1.0",
+    "uuid-validate": "0.0.2",
+    "yup": "^0.21.3",
+    "zxcvbn": "^4.4.2"
+  },
+  "devDependencies": {
+    "babel-jest": "^20.0.3",
+    "jest": "^20.0.4",
+    "nodemon": "^1.11.0",
+    "supertest": "^3.0.0",
+    "supertest-as-promised": "^4.0.2"
+  },
+  "jest": {
+    "roots": [
+      "src"
+    ],
+    "testEnvironment": "node"
+  }
+}

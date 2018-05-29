@@ -1,0 +1,3 @@
+mutation DeleteCspForUserMutation($user_id: String!, $csp_id: String!) {
+  deleteCloudStorageProviderForUser(user_id: $user_id, csp_id: $csp_id)
+}

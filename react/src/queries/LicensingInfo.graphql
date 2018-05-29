@@ -1,0 +1,6 @@
+fragment LicensingInfo on Organization {
+  id
+  has_available_licenses
+  users_count
+  users_limit
+}

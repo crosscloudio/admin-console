@@ -1,0 +1,15 @@
+query PoliciesQuery {
+  currentUser {
+    id
+    organization {
+      id
+      policies {
+        id
+        name
+        type
+        criteria
+        is_enabled
+      }
+    }
+  }
+}

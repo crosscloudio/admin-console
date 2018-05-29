@@ -1,0 +1,131 @@
+//
+// Avenxo
+// (c) KaijuThemes
+//
+// Tile
+// --------------------------------------------------
+
+// Info Tile Base Styles
+
+	.info-tile {
+		margin: 0px 0px 32px;
+		box-shadow: 0 1px 3px 0px rgba(0, 0, 0, 0.2);
+		background: #fff;
+		padding: 16px;
+		position: relative;
+		overflow: hidden;
+		border-radius: @border-radius-base;
+		display: block;
+
+		.tile-heading {
+			text-align: left;
+			color: @gray;
+			height: 16px;
+			line-height: 16px;
+			font-weight: 600;
+			font-size: @font-size-base;
+			text-transform: uppercase;
+		}
+		.tile-body {
+			text-align: right;
+			color: @gray-dark;
+			font-size: @font-size-h1;
+			font-weight: 400;
+			line-height: 72px;
+			position: relative;
+			z-index: 1;
+		}
+		.tile-footer {
+			text-align: right;
+			font-size: @font-size-small;
+			position: absolute;
+			right: 12px;
+			bottom: 8px;
+		}
+
+		.tile-icon {
+			position: absolute;
+			height: 160px;
+			width: 160px;
+			border-radius: 50%;
+			left: -80px;
+			bottom: -80px;
+
+			i {
+				font-size: 52px;
+				position: absolute;
+				left: 96px;
+				top: 0;
+			}
+		}
+	}
+
+
+	.info-tile-variant(@tile-icon-color) {
+		.tile-icon i {color: @tile-icon-color;}
+	}
+
+	.info-tile {
+		&.tile-warning 		{.info-tile-variant (@amber-500);}
+		&.tile-success 		{.info-tile-variant (@light-green-100);}
+		&.tile-teal 		{.info-tile-variant (@teal-100);}
+		&.tile-lime 		{.info-tile-variant (@lime-100);}
+		&.tile-danger  		{.info-tile-variant (@red-500);}
+		&.tile-info    		{.info-tile-variant (@cyan-100);}
+		&.tile-green   		{.info-tile-variant (@green-100);}
+		&.tile-primary   	{.info-tile-variant (@light-blue-100);}
+		&.tile-gray		   	{.info-tile-variant (@gray-100);}
+		&.tile-orange   	{.info-tile-variant (@orange-500);}
+		&.tile-blue   		{.info-tile-variant (@blue-100);}
+		&.tile-green   		{.info-tile-variant (@green-500);}
+		&.tile-purple   	{.info-tile-variant (@purple-100);}
+		&.tile-indigo   	{.info-tile-variant (@indigo-100);}
+		&.tile-brown   		{.info-tile-variant (@brown-100);}
+		&.tile-black   		{.info-tile-variant (black);}
+
+	}
+
+	// Alternate
+	.info-tile-variant-alt(@tile-bg, @tile-icon-color, @tile-heading-color, @tile-badge-color) {
+		background: @tile-bg;
+		.tile-heading 	{color: @tile-heading-color;}
+		.tile-icon i 	{color: @tile-icon-color;}
+		.tile-body 		{color: #fff !important}
+		.tile-footer span {color: @tile-badge-color !important}
+	}
+
+	.info-tile.info-tile-alt {
+		&.tile-warning 		{.info-tile-variant-alt (@amber-500, 		@amber-300, 		@amber-100, 		@amber-200 		);}
+		&.tile-success 		{.info-tile-variant-alt (@light-green-500, 	@light-green-300,	@light-green-100,	@light-green-200);}
+		&.tile-teal 		{.info-tile-variant-alt (@teal-500, 		@teal-300, 			@teal-100, 			@teal-200 		);}
+		&.tile-lime 		{.info-tile-variant-alt (@lime-500, 		@lime-300, 			@lime-100, 			@lime-200 		);}
+		&.tile-danger  		{.info-tile-variant-alt (@red-500, 			@red-300,			@red-100, 			@red-200 		);}
+		&.tile-info    		{.info-tile-variant-alt (@cyan-500, 		@cyan-300, 			@cyan-100, 			@cyan-200 		);}
+		&.tile-green   		{.info-tile-variant-alt (@green-500, 		@green-300, 		@green-100, 		@green-200 		);}
+		&.tile-primary   	{.info-tile-variant-alt (@light-blue-500, 	@light-blue-300,	@light-blue-100,	@light-blue-200 );}
+		&.tile-inverse   	{.info-tile-variant-alt (@gray-500, 		@gray-300, 			@gray-100, 			@gray-200 		);}
+		&.tile-orange   	{.info-tile-variant-alt (@orange-500, 		@orange-300, 		@orange-100, 		@orange-200 	);}
+		&.tile-blue   		{.info-tile-variant-alt (@blue-500, 		@blue-300, 			@blue-100, 			@blue-200 		);}
+		&.tile-green   		{.info-tile-variant-alt (@green-500, 		@green-300, 		@green-100, 		@green-200 		);}
+		&.tile-purple   	{.info-tile-variant-alt (@purple-500, 		@purple-300, 		@purple-100, 		@purple-200 	);}
+		&.tile-indigo   	{.info-tile-variant-alt (@indigo-500, 		@indigo-300, 		@indigo-100, 		@indigo-200 	);}
+		&.tile-brown   		{.info-tile-variant-alt (@brown-500, 		@brown-300, 		@brown-100, 		@brown-200 		);}
+		&.tile-blue-gray   	{.info-tile-variant-alt (@blue-gray-500, 	@blue-gray-300, 	@blue-gray-100, 	@blue-gray-200 	);}
+		&.tile-gray   		{.info-tile-variant-alt (@gray-500, 		@gray-400, 			@gray-200, 			@gray-300 		);}
+	}
+
+
+
+// Sparkline Blocks
+
+.sparkline-block {
+	> span, > div {display: block;}
+	.sparkline-title {color: @gray; font-size: @font-size-base;}
+	.sparkline-info {color: @gray-darker; font-size: @font-size-h3; margin-bottom: 8px;}
+	padding: 16px 0;
+}
+
+
+
+// Hide Tiles on default for animation
+.animated-content .info-tile {visibility: hidden}

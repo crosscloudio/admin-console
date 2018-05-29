@@ -1,0 +1,25 @@
+db:
+  image: postgres:9.6
+
+redis:
+  image: redis:3.2-alpine
+
+app:
+  image: cc-console-api
+  environment:
+    - "APP_ROOT=http://app.dev"
+    - "PORT=3000"
+    # for testing only
+    - "SECRET_KEY=some_testing_secret_key"
+  links:
+    - db
+
+tests:
+  build: ./docker/dev
+  command: npm run integration-tests
+  volumes:
+    - ./api:/app
+  links:
+    - app
+    - db
+    - redis

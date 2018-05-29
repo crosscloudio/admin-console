@@ -1,0 +1,31 @@
+{
+  "private": true,
+  "scripts": {
+    "eslint": "eslint api/src/ react/",
+    "lint": "npm run eslint && npm run prettier-check",
+    "precommit": "lint-staged",
+    "prettier": "prettier --single-quote --trailing-comma es5 --write \"{api,react}/**/*.js\"",
+    "prettier-check": "prettier --single-quote --trailing-comma es5 --list-different \"{api,react}/**/*.js\""
+  },
+  "lint-staged": {
+    "{api,react}/**/*.js": [
+      "prettier --single-quote --trailing-comma es5 --write",
+      "eslint",
+      "git add"
+    ]
+  },
+  "devDependencies": {
+    "babel-eslint": "^7.2.3",
+    "eslint": "^4.3.0",
+    "eslint-config-airbnb": "^15.1.0",
+    "eslint-config-prettier": "^2.3.0",
+    "eslint-plugin-babel": "^4.1.2",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "^5.1.1",
+    "eslint-plugin-prettier": "^2.1.2",
+    "eslint-plugin-react": "^7.1.0",
+    "husky": "^0.14.3",
+    "lint-staged": "^4.0.2",
+    "prettier": "^1.5.3"
+  }
+}

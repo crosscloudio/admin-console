@@ -1,0 +1,9 @@
+.UserInfoLink__iconContainer {
+    text-align: center;
+    display: inline-block;
+    width: 32px;
+}
+
+.UserInfoLink__container {
+    display: inline-flex;
+}

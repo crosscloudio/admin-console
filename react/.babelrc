@@ -1,0 +1,16 @@
+{
+  "plugins": ["transform-decorators-legacy"],
+  "presets": [
+    "es2015",
+    "stage-0",
+    "react"
+  ],
+  "env": {
+    "development": {
+      "plugins": [
+        "transform-react-jsx-source",
+        "transform-react-jsx-self"
+      ]
+    }
+  }
+}

@@ -1,0 +1,6 @@
+mutation SetUserRolesMutation($id: String!, $roles: [String]!) {
+  setUserRoles(id: $id, roles: $roles) {
+    id
+    roles
+  }
+}

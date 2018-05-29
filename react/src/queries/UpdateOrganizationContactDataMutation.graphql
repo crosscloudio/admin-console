@@ -1,0 +1,7 @@
+#import "./ContactInfo.graphql"
+
+mutation UpdateOrganizationContactDataMutation($input: UpdateOrganizationContactDataInput!) {
+  updateOrganizationContactData(input: $input) {
+    ...ContactInfo
+  }
+}

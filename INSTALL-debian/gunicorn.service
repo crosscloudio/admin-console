@@ -1,0 +1,18 @@
+[Unit]
+Description=gunicorn daemon
+Requires=gunicorn.socket
+After=network.target
+
+[Service]
+PIDFile=/run/gunicorn/pid
+User=www-data
+Group=www-data
+#Environment="CROSSCLOUD_WEB_SETTINGS=/srv/cc-web-portal/flask-config.cfg"
+WorkingDirectory=/srv/cc-backend/backend/api
+ExecStart=/srv/cc-backend/venv/bin/gunicorn --pid /run/gunicorn/pid endpoints:app --worker-class gevent
+ExecReload=/bin/kill -s HUP $MAINPID
+ExecStop=/bin/kill -s TERM $MAINPID
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

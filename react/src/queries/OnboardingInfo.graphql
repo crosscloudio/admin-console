@@ -1,0 +1,4 @@
+fragment OnboardingInfo on User {
+  id
+  ac_onboarding_finished
+}

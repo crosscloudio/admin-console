@@ -1,0 +1,6 @@
+mutation ResetUserKeysMutation($id: String!) {
+  resetUserKeys(id: $id) {
+    id
+    public_key
+  }
+}

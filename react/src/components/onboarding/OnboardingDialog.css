@@ -1,0 +1,48 @@
+.OnboardingDialog__modal {
+    width: 50%;
+}
+
+/*left footer elements of the modal*/
+.OnboardingDialog__footerLeft {
+    margin-right: auto;
+}
+
+/*right footer elements of the modal*/
+.OnboardingDialog__footerRight {
+    margin-left: auto;
+}
+
+/*overwrites the edges of the boostrap carousel*/
+.OnboardingDialog__modal .carousel-control.left, 
+.OnboardingDialog__modal .carousel-control.right {
+    background-image: none
+}
+
+.OnboardingDialog__modal .carousel.item {
+    width: 100%;
+}
+
+/* carousel component for content*/
+.OnboardingDialog__modal .carousel {
+    width: 100%;
+}
+
+.OnboardingDialog--heading {
+    text-align: center;
+    padding: 20px;
+    padding-bottom: 40px;
+}
+
+/* Custom modal footer*/
+.OnboardingDialog__modalFooter {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* custom modal body */
+.OnboardingDialog__modalBody {
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}

@@ -1,0 +1,68 @@
+version: "3"
+
+services:
+  db:
+    image: postgres:9.6
+    ports:
+      - "5432:5432"
+    networks:
+      - default
+
+  redis:
+    image: redis:3.2-alpine
+    networks:
+      - default
+
+  api:
+    build: ./docker/dev
+    command: dumb-init bash -c "npm install && ./node_modules/.bin/knex migrate:latest && ./node_modules/.bin/nodemon ${API_NODEMON_ARGS}  --exec ./node_modules/.bin/babel-node --watch src/ src/"
+    environment:
+      - "APP_ROOT=http://localhost:8000"
+      - "ENABLE_RESELLERS_APP=true"
+      # for development only
+      - "SECRET_KEY=some_secret_key"
+    volumes:
+      - ./api:/app
+    ports:
+      - "3030:3030"
+    depends_on:
+      - db
+      - redis
+    networks:
+      - default
+      # make the api server visible for crosscloud-webdav
+      - crosscloud-dev
+
+  frontend:
+    build: ./docker/dev
+    command: dumb-init bash -c "npm install && npm start"
+    environment:
+      - "WEBPACK_DEV_SERVER_DOMAIN=${WEBPACK_DEV_SERVER_DOMAIN}"
+      - "WEBPACK_USE_POOLING=${WEBPACK_USE_POOLING}"
+    volumes:
+      - ./react:/app
+    depends_on:
+      - api
+    networks:
+      - default
+
+  proxy:
+    image: nginx:1.12-alpine
+    volumes:
+      - ./config/dev-proxy/nginx.conf:/etc/nginx/nginx.conf:ro
+    ports:
+      - "8000:80"
+    depends_on:
+      - api
+      - frontend
+    networks:
+      - default
+      # allow to access crosscloud-webdav
+      - crosscloud-dev
+
+networks:
+  default:
+
+  crosscloud-dev:
+    external:
+      name: crosscloud-dev

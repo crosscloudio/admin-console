@@ -1,0 +1,9 @@
+/*
+ * Fix feedback icon alignment in the registration and team info forms
+ */
+
+/* Double `.form-control-feedback` to have extra specificity */
+.has-feedback label ~ .form-control-feedback.form-control-feedback {
+  /* Make the right icons correctly vertically aligned */
+  top: 28px;
+}

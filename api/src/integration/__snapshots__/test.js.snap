@@ -1,0 +1,82 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`server graphql endpoint should allow to query admin fields for admins with short-lived tokens 1`] = `
+Object {
+  "data": Object {
+    "users": Array [
+      Object {
+        "email": "admin@company.com",
+        "name": "Patric Doe",
+      },
+      Object {
+        "email": "john@shmith.com",
+        "name": "John Smith",
+      },
+    ],
+  },
+}
+`;
+
+exports[`server graphql endpoint should not allow to query admin fields for non-admin 1`] = `
+Object {
+  "data": Object {
+    "users": null,
+  },
+  "errors": Array [
+    Object {
+      "locations": Array [
+        Object {
+          "column": 3,
+          "line": 2,
+        },
+      ],
+      "message": "Administrator rights required to perform this action",
+      "path": Array [
+        "users",
+      ],
+    },
+  ],
+}
+`;
+
+exports[`server graphql endpoint should return a correct response for logged-in users 1`] = `
+Object {
+  "data": Object {
+    "currentUser": Object {
+      "email": "john@shmith.com",
+      "organization": Object {
+        "display_name": "Foo Bar Inc.",
+        "encryption": Object {
+          "enabled": false,
+        },
+        "policies": Array [],
+      },
+      "roles": Array [
+        "user",
+      ],
+      "sync_rules": Array [],
+    },
+  },
+}
+`;
+
+exports[`server should return a correct response if specified the current API version 1`] = `
+Object {
+  "data": Object {
+    "currentUser": Object {
+      "email": "john@shmith.com",
+      "organization": Object {
+        "display_name": "Foo Bar Inc.",
+        "encryption": Object {
+          "enabled": false,
+        },
+        "policies": Array [],
+      },
+      "roles": Array [
+        "user",
+      ],
+      "sync_rules": Array [],
+    },
+  },
+}
+`;

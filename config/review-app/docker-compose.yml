@@ -1,0 +1,20 @@
+version: "2"
+
+services:
+  db:
+    image: postgres:9.6
+    labels:
+      io.rancher.container.pull_image: always
+    restart: on-failure
+
+  app:
+    image: crosscloud.registry.hybrid-cloud.at/crosscloud-enterprise:latest
+    labels:
+      io.rancher.container.pull_image: always
+    restart: on-failure
+    links:
+      - db
+    environment:
+      - "APP_ROOT=${APP_ROOT}"
+      - "FORCE_HTTPS=true"
+      - "SECRET_KEY=${SECRET_KEY}"

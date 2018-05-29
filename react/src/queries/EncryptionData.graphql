@@ -1,0 +1,12 @@
+fragment EncryptionData on Organization {
+  id
+  encryption {
+    enabled
+    encrypt_external_shares
+    encrypt_public_shares
+    csps_settings {
+      type
+      enabled
+    }
+  }
+}

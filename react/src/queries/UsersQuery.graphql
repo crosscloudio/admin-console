@@ -1,0 +1,8 @@
+query UsersQuery {
+  users {
+    id
+    email
+    is_enabled
+    is_resellers_admin
+  }
+}

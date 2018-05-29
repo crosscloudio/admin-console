@@ -1,0 +1,7 @@
+#import "./EncryptionData.graphql"
+
+mutation DisableEncryptionMutation {
+  disableEncryption {
+    ...EncryptionData
+  }
+}

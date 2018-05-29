@@ -1,0 +1,9 @@
+#import "./EnabledStorageTypes.graphql"
+
+mutation UpdateEnabledStorageTypesMutation(
+  $enabled: [String!]
+) {
+  updateEnabledStorageTypes(enabled: $enabled) {
+    ...EnabledStorageTypes
+  }
+}

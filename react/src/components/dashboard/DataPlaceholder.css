@@ -1,0 +1,11 @@
+/**
+styles for DataPlaceholder.jsx
+**/
+
+.DataPlaceholder{
+    text-align: center;
+    opacity: 0.2;
+}
+.DataPlaceholder__icon {
+    font-size: 5em;
+}

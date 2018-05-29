@@ -1,0 +1,9 @@
+mutation AddPolicyMutation($input: PolicyInput!) {
+  addPolicy(input: $input) {
+    id
+    name
+    type
+    criteria
+    is_enabled
+  }
+}

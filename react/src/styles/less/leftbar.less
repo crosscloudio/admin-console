@@ -1,0 +1,341 @@
+//
+// Avenxo
+// (c) KaijuThemes
+//
+// Leftbar/Sidebar
+// --------------------------------------------------
+
+
+// --------------
+// Sidebar widgets
+
+
+.sidebar .widget {
+	.widget-heading, li.nav-separator {
+		font-size: @font-size-small;
+		font-weight: 700;
+		line-height: @line-height-small;
+		text-transform: uppercase;
+		display: block;
+		padding: 12px 16px;
+		&:empty {
+			font-size: 0;
+			padding: 4px 0px;
+		}
+
+	}
+
+	.widget-body {
+		.userinfo {
+			padding: 32px 16px;
+			position: relative;
+			.avatar {
+				position: absolute;
+				height: 64px;
+				width: 64px;
+			}
+			.info {
+				padding: 8px 0 8px 80px;
+				.username {
+					font-size: @font-size-h4;
+					line-height: 24px;
+				}
+				.useremail {
+					font-size: @font-size-small;
+					line-height: @line-height-small;
+				}
+			}
+		}
+
+
+		.mini-progressbar {
+			padding: 16px;
+			font-size: @font-size-small;
+			.pull-left {}
+			.pull-right {}
+			.progress {
+				height: 2px; 
+				margin-bottom: 0; 
+			}
+		}
+	}
+
+}
+
+
+/* Sidebar Menu */
+
+
+.sidebar nav.widget-body>ul.acc-menu {
+	white-space: normal; 
+	margin: 0; 
+	padding-left: 0 !important; 
+	list-style-type: none;
+	
+	> li:first-child > a {border-top: 0}
+
+	.divider {
+		height: 0px; width: 100%; 
+		margin: 0; overflow: hidden; 
+	}
+	
+	a {text-decoration: none;}
+	ul {padding: 8px 0;padding-left: 0 !important; list-style: none;}
+	ul, ul li a {border-top: none; box-shadow: none; }
+	
+	//Main Menu Styles - Level 1
+	li, li a {white-space: nowrap;}
+	li a {display: block; padding: 12px 16px; position: relative; font-weight: 400;}
+
+	// Level 1 Icon styles
+	> li > a > i {
+		margin-left: 0px; 
+		font-size: 17px;
+		margin-right: 16px; 
+		min-width: 24px; 
+		text-align: center; 
+		display: inline-block;
+	}
+	
+	// Submenu Styles - Level 2
+	ul li a {padding: 6px 16px 6px 56px; font-weight: 400;}
+	   li.active > a {font-weight: 400;}
+	ul li.active:not(.open)>a {font-weight: 400;}
+	   li ul {display: none;}
+	
+	ul ul {padding: 0;} //Removes the extra stacked padding
+	
+	// All other levels
+	li li li a {padding-left: 72px;} //level 3
+	ul ul ul li a {padding-left: 88px} // level 4
+	ul ul ul ul li a {padding-left: 104px} // level 5
+
+	li.disabled-link a {
+   		cursor: @cursor-disabled;
+   		font-style: italic;
+	}
+}
+
+
+
+
+//Arrows
+.sidebar nav.widget-body>ul.acc-menu li.hasChild {
+	&>a {position: relative; &:extend(.clearfix all);}
+
+	&>a:before {.opacity(0.25);}
+
+	&>a:before {content: "\f105";}
+	&.open>a:before {content: "\f107";}
+
+	&>a:before, 
+	&.open>a:before,
+	&.open>a:before {
+	  font-family: FontAwesome;
+	  font-style: normal;
+	  font-weight: normal;
+
+	  display: inline-block;
+	  text-decoration: inherit;
+	  text-align: center;
+	  font-size: 14px;
+	  padding-right: 0px;
+	  min-width: 16px;
+	  // line-height: 24px;
+	  float: right;
+	}
+}
+
+.sidebar nav.widget-body>ul.acc-menu li.hasChild li.hasChild a:before {top: 4px;}
+
+// Arrow on collapse (first level, always shows opened)
+body.sidebar-collapsed .sidebar nav.widget-body>ul.acc-menu>li.hasChild>a:before {content:""}
+body.sidebar-collapsed .sidebar nav.widget-body>ul.acc-menu>li.hasChild:hover>a:before  {
+	content: "\f107"; 
+	.opacity(0.25);
+}
+
+//Turn arrow on sidebear collapsed hover
+body.sidebar-collapsed {.sidebar nav.widget-body>ul.acc-menu li.hasChild:hover>a:before {content: "\f107";}}
+ 
+
+//Necessary for Sidebar to work properly
+.sidebar-collapsed .hasChild {
+	> ul.acc-menu {display: none !important;}
+	&:hover > ul.acc-menu {display: block !important;}
+}
+
+
+
+
+// ----------------------------
+// Collapse at small screens
+// ----------------------------
+
+
+@media screen and (max-width: 768px) {
+	.static-sidebar-wrapper {
+		.transition(~'width 0ms ease-out');
+	}
+
+	.static-content-wrapper {overflow: hidden;} // Because offcanvas
+
+	body.sidebar-collapsed .static-sidebar-wrapper {
+		width: 0px;
+	}
+}
+
+.static-content-wrapper {background: @body-bg}
+
+
+// --------------
+// Collapsed
+// --------------
+@media screen and (min-width: 768px) {
+	body.sidebar-collapsed {
+
+		//Apart from some widgets, hide everything
+		.sidebar {
+			.widget:not(.stay-on-collapse) {display: none !important;}
+			.widget.stay-on-collapse {
+				.widget-heading, li.nav-separator {
+					font-size: 0;
+					padding: 4px 0;
+				}
+
+				li.nav-separator:hover {
+					width: auto !important;
+				}
+			}
+		}
+
+		//Sidebar as collapsed
+		.static-sidebar-wrapper {
+			&, & > div {
+				white-space: nowrap;
+				width: 56px;
+				overflow: visible;
+			}
+			.widget nav.widget-body > ul.acc-menu ul {border-bottom-right-radius: 0;}
+			.widget nav.widget-body > ul > li {
+				white-space: nowrap;
+				position: relative;
+				> a {border-radius: 0; padding: 12px 16px;}
+				border-radius: 0;
+				&.hasChild {
+					> a {border-radius: 0;}
+					border-radius: 0;
+				}
+
+				i {margin-right: 16px; margin-left: 0px;}
+
+				&:hover {
+					width: 256px;
+					z-index: 1512;
+					
+					>ul {
+						display: block;
+						position: absolute;
+						left: 56px;
+						width: 200px;
+						>li>a {padding-left: 16px; padding-right: 16px;}
+						>li li>a {padding-left: 32px; padding-right: 16px;}
+						>li li li>a {padding-left: 48px; padding-right: 16px;}
+						>li li li li>a {padding-left: 64px; padding-right: 16px;}
+					}
+				}
+
+				&.active {
+					> ul {display: none !important;}
+					&:hover {
+						> ul {display: block !important;}
+					}
+				}
+			}
+		}
+	}
+
+
+	body.sidebar-collapsed .static-sidebar-wrapper .widget nav.widget-body > ul.acc-menu > li:first-child:hover {
+		border-bottom-right-radius: 0;
+	}
+	body.sidebar-collapsed .static-sidebar-wrapper .widget nav.widget-body > ul.acc-menu > li:hover > a {
+		box-shadow: none;
+		border-top-right-radius: @border-radius-small;
+		border-bottom-right-radius: @border-radius-small;
+	}
+
+	body.sidebar-collapsed .static-sidebar-wrapper .widget nav.widget-body > ul.acc-menu > li:hover {
+		border-top-right-radius: @border-radius-small;
+		border-bottom-right-radius: @border-radius-small;
+	}
+
+	body.sidebar-collapsed .static-sidebar-wrapper .widget nav.widget-body > ul.acc-menu > li.hasChild:hover > a {
+		border-bottom-right-radius: 0;
+	}
+
+	body.sidebar-collapsed .static-sidebar-wrapper .widget nav.widget-body > ul.acc-menu > li > ul {
+		box-shadow: none;
+		border-bottom-right-radius: @border-radius-small;
+	}
+}
+
+
+// -------------------------
+// Scrollbars on the Sidebar
+// -------------------------
+
+.sidebar-scroll .static-sidebar {
+	position: fixed !important;
+	top: 50px;
+	bottom: 0px;
+}
+
+@media (max-width: 767px) {
+	.static-sidebar {
+		position: fixed !important;
+		top: 50px;
+		bottom: 0px;
+		
+		overflow-y: auto;
+	}
+}
+
+
+
+
+// Badges
+
+.sidebar nav.widget-body>ul.acc-menu .badge,
+.sidebar nav.widget-body>ul.acc-menu .label {
+	position: absolute;
+  	right: inherit;
+  	left: 28px;
+  	top: 6px;
+}
+
+
+// Labels 
+
+.sidebar nav.widget-body>ul.acc-menu .label {
+  	z-index: 1;
+}
+.sidebar nav.widget-body>ul.acc-menu>li.hasChild ul li .label {
+	top: inherit;
+	position: inherit;
+	left: inherit;
+	right: inherit;
+}
+
+
+// Animation
+// .animate-this {
+// 	-webkit-backface-visibility: hidden;
+// 	-webkit-transform-style: preserve-3d;
+// 	transition: 0.1s all ease-in;
+// 	-webkit-transform:translate3d(0,0,0);
+// }
+
+// body .static-sidebar-wrapper {
+// 	&:extend(.animate-this all);
+// }

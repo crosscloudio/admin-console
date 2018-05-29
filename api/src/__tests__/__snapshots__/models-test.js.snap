@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Organizations getEnabledStorageTypes should return an empty list if not enabled types set explicitly 1`] = `
+Array [
+  "box",
+  "cifs",
+  "dropbox",
+  "gdrive",
+  "nextcloud",
+  "office365groups",
+  "onedrive",
+  "onedrivebusiness",
+  "owncloud",
+  "sharepoint",
+]
+`;

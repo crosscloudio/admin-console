@@ -1,0 +1,18 @@
+db:
+  image: postgres:9.6
+
+redis:
+  image: redis:3.2-alpine
+
+test:
+  build: ./docker/dev
+  command: bash -c "./node_modules/.bin/knex migrate:latest && npm test"
+  environment:
+    - "APP_ROOT=http://localhost:8000"
+    # for development only
+    - "SECRET_KEY=some_secret_key"
+  volumes:
+    - ./api:/app
+  links:
+    - db
+    - redis

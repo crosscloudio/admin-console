@@ -1,0 +1,9 @@
+#import "./CspData.graphql"
+
+mutation AddCspForUserMutation(
+  $user_id: String!, $input: CloudStorageProviderInput!
+) {
+  addCloudStorageProviderForUser(user_id: $user_id, input: $input) {
+    ...CspData
+  }
+}

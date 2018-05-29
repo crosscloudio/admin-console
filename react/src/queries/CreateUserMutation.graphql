@@ -1,0 +1,26 @@
+#import "./LicensingInfo.graphql"
+
+mutation CreateUserMutation(
+  $email: String!,
+  $name: String!
+  $image: String,
+  $is_enabled: Boolean
+) {
+  createUser(
+    email: $email,
+    name: $name,
+    image: $image,
+    is_enabled: $is_enabled
+  ) {
+    user {
+      id
+      email
+      name
+      is_enabled
+      is_resellers_admin
+    }
+    organization {
+      ...LicensingInfo
+    }
+  }
+}

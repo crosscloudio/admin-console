@@ -1,0 +1,3 @@
+.UserRow--greyed-out {
+  filter: grayscale(1);
+}

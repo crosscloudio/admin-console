@@ -1,0 +1,7 @@
+fragment CspData on CloudStorageProvider {
+  id
+  csp_id
+  display_name
+  type
+  unique_id
+}

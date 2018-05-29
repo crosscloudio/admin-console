@@ -1,0 +1,10 @@
+#import "./EncryptionData.graphql"
+
+query EncryptionPreferencesQuery {
+  currentUser {
+    id
+    organization {
+      ...EncryptionData
+    }
+  }
+}

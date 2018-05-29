@@ -1,0 +1,358 @@
+/* Following CSS are only in the demo and are of no use in a Production */
+
+// Home Page
+
+    // Mapael
+        .demo-mapael.map > svg {max-height: 189px;}
+
+
+    // New Memeber Table in Dashboard
+        .demo-new-members {
+            table {.icheck {margin: 0 -20px -5px 0 !important;}}
+            table td.td-btn {line-height: 1}
+
+            .footer-pagination {
+                background: @gray-100;
+                border-top: 2px solid @border-darker;
+                padding: 10px;
+                border-bottom-right-radius: @border-radius-base;
+                .pagination {
+                    margin: 0 !important;
+                    float: right;
+                }
+            }
+        }
+
+// Grids
+    .show-grid [class*="col-"] {
+        background: @border-lighter; text-align: center; margin-bottom: 10px; line-height: 2em; border: 10px solid @gray-100;
+        .content {background: @border-lighter; border: 1px solid @border-darker}
+    }
+    .show-grid [class*="col-"]:hover {background: @border-darker; }
+
+    .show-grid .row.no-gutter [class*="col-"] {
+        border-left: 0;
+        border-right: 0;
+    }
+
+
+    li.show-grid {
+        .row {
+            margin: 0;
+            &:last-child {
+                [class*="col-"] {
+                    margin: 0;
+                }
+            }
+        }
+        [class*="col-"] {
+            border-bottom: 0;
+            border-top: 0;
+        }
+    }
+
+    .navbar-inverse .show-grid [class*="col-"] {
+        background: #333; border-color:#4d4d4d;
+    }
+
+    .sidebar .widget .demo-grid .row > div {
+        margin-bottom: 10px;
+        padding: 10px;
+        text-align: center;
+        background: #121;
+        box-shadow: inset 0px 0px 1px 0px #fff;
+    }
+
+
+// Breadcrumbs
+    .demo-example .breadcrumb {margin-bottom: 32px;}
+
+// Typography
+    #demo-type-table {
+    	width:100%;
+    	margin: -20px 0 -20px 0;
+    	td {vertical-align: middle;}
+    	h1,h2,h3,h4,h5,h6 {margin: 15px 0;}
+    	td:last-child {text-align: right;}
+    }
+
+// Buttons
+    ul.demo-btns {
+        margin: 0;
+        padding: 0;
+        line-height: 0;
+        list-style: none;
+        > li {
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+    }
+
+// iCheck Demo in Form Componenets
+    .demo-icheck {
+        .radio label, .checkbox label {padding-left: 0 !important;}
+        .icheck > label > div {margin-right: 5px !important;}
+    }
+
+
+// Demo Switcher
+    .demo-options {
+        z-index: 900; 
+        position: fixed;
+        top: 128px;
+    	width: 188px;
+        border: 0;
+    	box-shadow: none;
+    	padding: 0;
+        border-bottom-left-radius: @border-radius-base;
+        right: -188px;
+        z-index: @zindex-navbar + 40;
+        
+        background: #fff;
+
+        .transition(~"transform 0.15s ease");
+
+        &.active{
+            transform: translateX(-188px);
+            -ms-transform: translateX(-188px);
+            -o-transform: translateX(-188px);
+            -webkit-transform: translateX(-188px);
+
+        }
+
+        .demo-heading {
+            padding: 16px 0px;
+            font-size: @font-size-small;
+            line-height: @line-height-small;
+            text-transform: uppercase;
+            font-weight: 700;
+            height: 48px;
+            color: @gray-700;
+            background-color: #fff;
+            border-top: 1px solid @border-darker;
+        }
+
+        .demo-options-icon {
+            display: inline-block;
+            position: absolute;
+            left: -47px;
+            height: 48px;
+            width: 48px;
+            color: @gray-700;
+            line-height: 48px;
+            text-align: center;
+            font-size: @font-size-base;
+            border-width: 1px 0 1px 1px;
+            border-style: solid;
+            border-color: @border-darker;
+            letter-spacing: normal;
+            text-transform: none;
+            background-color: #fff;
+            border-top-left-radius: @border-radius-base;
+            border-bottom-left-radius: @border-radius-base;
+            top: 0;
+            cursor: pointer;
+            
+            box-shadow: none;
+        }
+
+        .demo-body {
+            padding: 20px;
+            background-color: #fff;
+            border-left: 1px solid @border-darker;
+            color: @gray-700;
+            .tabular {
+                margin-bottom: 0;
+                .tabular-cell {
+                    height: 32px;
+                    font-size: @font-size-small;
+                    // font-style: italic;
+                    &.demo-switches {text-align: right;}
+                }
+            }
+            .option-title {
+                font-size: @font-size-small;
+                text-transform: uppercase;
+                font-weight: 700;
+                margin-bottom: 8px;
+            }
+        }
+
+        .demo-body + .demo-body:last-child {border-bottom-left-radius: @border-radius-base; border-bottom: 1px solid @border-darker;}
+
+        .demo-color-list {
+            padding: 0 !important;
+            text-align: left;
+            margin: 0 !important;
+            font-size: 0;
+            .list-unstyled();
+            .list-inline();
+            li {
+                margin: 1px;
+                padding: 0;
+                span {
+                    border-radius: 50%; 
+                    display: block;
+                    height: 16px !important;
+                    width: 16px !important;
+                    &:hover {cursor: pointer;}
+                }
+            }
+            &.text-center {text-align: center;}
+
+            // .demo-default {background-color: @brand-default;}
+            // .demo-inverse {background-color: @brand-inverse;}
+            // .demo-midnightblue {background-color: @brand-midnightblue;}
+            // .demo-blue {background-color: @brand-blue;}
+            // .demo-green {background-color: @brand-green;}
+            // .demo-teal {background-color: @brand-teal;}
+            // .demo-lime {background-color: @brand-lime;}
+            // .demo-light-green {background-color: @brand-success;}
+            // .demo-indigo {background-color: @brand-indigo;}
+            // .demo-purple {background-color: @brand-purple;}
+            // .demo-cyan {background-color: @brand-info;}
+            // .demo-light-blue {background-color: @brand-primary;}
+            // .demo-pink {background-color: @brand-pink;}
+            // .demo-red {background-color: @brand-danger;}
+            // .demo-amber {background-color: @brand-warning;}
+            // .demo-orange {background-color: @brand-orange;}
+            // .demo-deep-purple {background-color: @brand-deeppurple;}
+            // .demo-brown {background-color: @brand-brown;}
+            // .demo-deep-orange {background-color: @brand-deeporange;}
+
+
+            .demo-cyan {background-color: @brand-info;}
+            .demo-light-blue {background-color: @brand-primary;}
+            .demo-blue {background-color: @brand-blue;}
+            .demo-indigo {background-color: @brand-indigo;}
+            .demo-deep-purple {background-color: @brand-deeppurple;}
+            .demo-purple {background-color: @brand-purple;}
+            .demo-pink {background-color: @brand-pink;}
+            .demo-red {background-color: @brand-danger;}
+            .demo-teal {background-color: @brand-teal;}
+            .demo-green {background-color: @brand-green;}
+            .demo-light-green {background-color: @brand-success;}
+            .demo-lime {background-color: @brand-lime;}
+            .demo-yellow {background-color: @brand-yellow;}
+            .demo-amber {background-color: @brand-warning;}
+            .demo-orange {background-color: @brand-orange;}
+            .demo-deep-orange {background-color: @brand-deeporange;}
+            .demo-info {background-color: @brand-info;}
+            .demo-midnightblue {background-color: @brand-midnightblue;}
+            .demo-gray {background-color: @gray-500;}
+            .demo-bluegraylight {background-color: @blue-gray-50;}
+            .demo-black {background-color: @gray-800;}
+            .demo-bluegray {background-color: @blue-gray-500;}
+            .demo-graylight {background-color: @gray-50;}
+            .demo-brown {background-color: @brand-brown;}
+            .demo-default {background-color: #fff; border: 2px solid @red-300;}
+
+
+            .pattern-brickwall         {background: url(../img/patterns/brickwall.png)}
+            .pattern-dark-stripes      {background: url(../img/patterns/dark_stripes.png)}
+            .pattern-rockywall         {background: url(../img/patterns/rockywall.png)}
+            .pattern-subtle-carbon     {background: url(../img/patterns/subtle_carbon.png)}
+            .pattern-tweed             {background: url(../img/patterns/tweed.png)}
+            .pattern-vertical-cloth    {background: url(../img/patterns/vertical_cloth.png)}
+            .pattern-grey_wash_wall    {background: url(../img/patterns/grey_wash_wall.png)}
+            .pattern-pw_maze_black     {background: url(../img/patterns/pw_maze_black.png)}
+            .pattern-wild_oliva        {background: url(../img/patterns/wild_oliva.png)}
+            .pattern-stressed_linen    {background: url(../img/patterns/stressed_linen.png)}
+            .pattern-sos               {background: url(../img/patterns/sos.png)}
+
+            [class*="pattern-"] {
+                border: 0;
+            }
+
+        }
+    }
+
+
+// Boxed Layout backgrounds
+
+    .demo-blocks {
+        width: 48px; height: 48px; border-radius: @border-radius-base;
+        display: inline-block; cursor: pointer;
+        margin-right: 16px; margin-bottom: 16px;
+        &:hover {
+            border-color: @border-darker;
+        }
+
+        &.color-dark        {background:#313338;}
+        &.color-red         {background:#b43e2e;}
+        &.color-green       {background:#48d09b;}
+        &.color-blue        {background:#2e5dac;}
+        &.color-lavender    {background:#716885;}
+
+        &.pattern-brickwall         {background: url(../img/patterns/brickwall.png)}
+        &.pattern-dark-stripes      {background: url(../img/patterns/dark_stripes.png)}
+        &.pattern-rockywall         {background: url(../img/patterns/rockywall.png)}
+        &.pattern-subtle-carbon     {background: url(../img/patterns/subtle_carbon.png)}
+        &.pattern-tweed             {background: url(../img/patterns/tweed.png)}
+        &.pattern-vertical-cloth    {background: url(../img/patterns/vertical_cloth.png)}
+        &.pattern-grey_wash_wall    {background: url(../img/patterns/grey_wash_wall.png)}
+        &.pattern-pw_maze_black     {background: url(../img/patterns/pw_maze_black.png)}
+        &.pattern-wild_oliva        {background: url(../img/patterns/wild_oliva.png)}
+        &.pattern-stressed_linen    {background: url(../img/patterns/stressed_linen.png)}
+        &.pattern-sos               {background: url(../img/patterns/sos.png)}
+    }
+
+
+
+    // Panel Color List -----------
+        .alert .panel-color-list {
+            margin: 0;
+            padding: 0 !important;
+            box-shadow: none;
+            li {
+                padding: 0;
+                span {
+                    height: 16px;
+                    width: 16px;
+                    display: block;
+                    border-radius: 50%;
+                    margin-top: 0;
+                }
+                &:hover {cursor: pointer;}
+            }
+        }
+
+        span[data-style="panel-info"]       {background-color: @brand-info;}
+        span[data-style="panel-primary"]        {background-color: @brand-primary;}
+        span[data-style="panel-blue"]       {background-color: @brand-blue;}
+        span[data-style="panel-indigo"]         {background-color: @brand-indigo;}
+        span[data-style="panel-deeppurple"]         {background-color: @brand-deeppurple;}
+        span[data-style="panel-purple"]         {background-color: @brand-purple;}
+        span[data-style="panel-pink"]           {background-color: @brand-pink;}
+        span[data-style="panel-danger"]         {background-color: @brand-danger;}
+        span[data-style="panel-teal"]           {background-color: @brand-teal;}
+        span[data-style="panel-green"]          {background-color: @brand-green;}
+        span[data-style="panel-success"]            {background-color: @brand-success;}
+        span[data-style="panel-lime"]           {background-color: @brand-lime;}
+        span[data-style="panel-yellow"]         {background-color: @brand-yellow;}
+        span[data-style="panel-warning"]            {background-color: @brand-warning;}
+        span[data-style="panel-orange"]         {background-color: @brand-orange;}
+        span[data-style="panel-deeporange"]         {background-color: @brand-deeporange;}
+        span[data-style="panel-midnightblue"]           {background-color: @brand-midnightblue;}
+        span[data-style="panel-bluegray"]           {background-color: @blue-gray-500;}
+        span[data-style="panel-bluegraylight"]          {background-color: @blue-gray-50;}
+        span[data-style="panel-black"]          {background-color: @gray-900;}
+        span[data-style="panel-gray"]           {background-color: @gray-500;}
+        span[data-style="panel-default"]            {background-color: @gray-50;}
+        span[data-style="panel-white"]          {background-color: #fff; border: 2px solid @red-300;}
+        span[data-style="panel-brown"]          {background-color: @brand-brown;}
+
+
+// dashboard flot 
+
+#newvsreturning, #socialstats, #earnings {
+    .legend {
+        > div {border-radius: 2px;}
+        .legendColorBox {padding-left: 4px;}
+        .legendColorBox > div > div {
+            border-width: 4px !important;
+        }
+        .legendLabel {padding-left: 6px !important; padding-right: 4px !important;}
+    }
+}
+#newvsreturning .legend > div, #newvsreturning .legend > table {top: 0 !important; right: 0 !important;}

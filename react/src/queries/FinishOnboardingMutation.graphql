@@ -1,0 +1,7 @@
+#import "./OnboardingInfo.graphql"
+
+mutation FinishOnboardingMutation {
+  finishAcOnboarding {
+    ...OnboardingInfo
+  }
+}

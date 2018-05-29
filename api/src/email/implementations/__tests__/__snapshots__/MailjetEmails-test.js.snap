@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MailjetEmails #sendResetPasswordEmail should sent email 1`] = `
+Array [
+  "https://api.mailjet.com/v3/send",
+  Object {
+    "body": "{\\"FromEmail\\":\\"me@example.com\\",\\"FromName\\":\\"CrossCloud\\",\\"Recipients\\":[{\\"Email\\":\\"sample@test.org\\",\\"Name\\":\\"John Smith\\"}],\\"Subject\\":\\"Set CrossCloud password\\",\\"Text-part\\":\\"Hi John Smith,\\\\n\\\\nSet your password here: http://localhost:8000/reset-password/eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjEsImlhdCI6MTQ5NjEzMzYxNiwiZXhwIjoxNDk2MzkyODE2LCJzdWIiOiJwYXNzd29yZC1zZXQifQ.wvewANIKzbgJ_HGXo6zRRlNXXFjCC7GZ7E7KRd1zJR4_CzRKMtUVJWkvJNmMKbTueRN9iCpn2bQFSEYeol-d2w\\\\n\\\\nThanks,\\\\nCrossCloud team\\\\n\\",\\"Html-part\\":\\"<p>Hi John Smith,</p>\\\\n\\\\n<p>Click the link below to set your password:</p>\\\\n<p><a href=\\\\\\"http://localhost:8000/reset-password/eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjEsImlhdCI6MTQ5NjEzMzYxNiwiZXhwIjoxNDk2MzkyODE2LCJzdWIiOiJwYXNzd29yZC1zZXQifQ.wvewANIKzbgJ_HGXo6zRRlNXXFjCC7GZ7E7KRd1zJR4_CzRKMtUVJWkvJNmMKbTueRN9iCpn2bQFSEYeol-d2w\\\\\\">http://localhost:8000/reset-password/eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjEsImlhdCI6MTQ5NjEzMzYxNiwiZXhwIjoxNDk2MzkyODE2LCJzdWIiOiJwYXNzd29yZC1zZXQifQ.wvewANIKzbgJ_HGXo6zRRlNXXFjCC7GZ7E7KRd1zJR4_CzRKMtUVJWkvJNmMKbTueRN9iCpn2bQFSEYeol-d2w</a></p>\\\\n\\\\n<p>Thanks,<br>\\\\nCrossCloud team</p>\\\\n\\",\\"Mj-trackclick\\":1}",
+    "headers": Object {
+      "Authorization": "Basic c2FtcGxlIGtleTpzYW1wbGUgc2VjcmV0",
+      "Content-Type": "application/json",
+    },
+    "method": "POST",
+  },
+]
+`;
+
+exports[`MailjetEmails #sendResetPasswordEmail should sent email 2`] = `
+Array [
+  "https://api.mailjet.com/v3/send",
+  Object {
+    "body": "{\\"FromEmail\\":\\"me@example.com\\",\\"FromName\\":\\"CrossCloud\\",\\"Recipients\\":[{\\"Email\\":\\"sample@test.org\\",\\"Name\\":\\"John Smith\\"}],\\"Subject\\":\\"Reset CrossCloud password\\",\\"Text-part\\":\\"Hi John Smith,\\\\n\\\\nReset your password here: http://localhost:8000/reset-password/eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjEsImlhdCI6MTQ5NjEzMzYxNiwiZXhwIjoxNDk2MzkyODE2LCJzdWIiOiJwYXNzd29yZC1zZXQifQ.wvewANIKzbgJ_HGXo6zRRlNXXFjCC7GZ7E7KRd1zJR4_CzRKMtUVJWkvJNmMKbTueRN9iCpn2bQFSEYeol-d2w\\\\n\\\\nThanks,\\\\nCrossCloud team\\\\n\\",\\"Html-part\\":\\"<p>Hi John Smith,</p>\\\\n\\\\n<p>Click the link below to reset your password:</p>\\\\n<p><a href=\\\\\\"http://localhost:8000/reset-password/eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjEsImlhdCI6MTQ5NjEzMzYxNiwiZXhwIjoxNDk2MzkyODE2LCJzdWIiOiJwYXNzd29yZC1zZXQifQ.wvewANIKzbgJ_HGXo6zRRlNXXFjCC7GZ7E7KRd1zJR4_CzRKMtUVJWkvJNmMKbTueRN9iCpn2bQFSEYeol-d2w\\\\\\">http://localhost:8000/reset-password/eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjEsImlhdCI6MTQ5NjEzMzYxNiwiZXhwIjoxNDk2MzkyODE2LCJzdWIiOiJwYXNzd29yZC1zZXQifQ.wvewANIKzbgJ_HGXo6zRRlNXXFjCC7GZ7E7KRd1zJR4_CzRKMtUVJWkvJNmMKbTueRN9iCpn2bQFSEYeol-d2w</a></p>\\\\n\\\\n<p>Thanks,<br>\\\\nCrossCloud team</p>\\\\n\\",\\"Mj-trackclick\\":1}",
+    "headers": Object {
+      "Authorization": "Basic c2FtcGxlIGtleTpzYW1wbGUgc2VjcmV0",
+      "Content-Type": "application/json",
+    },
+    "method": "POST",
+  },
+]
+`;

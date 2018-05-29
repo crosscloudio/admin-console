@@ -1,0 +1,287 @@
+//alerts.less
+.alert .alert-link {
+	font-weight: @alert-link-font-weight; color: @brand-primary !important;
+}
+
+.alert {
+	> h1, > h2, > h3, > h4, > h5, >h5, > h6 {margin-top: 0 !important}
+	border-width: 0;
+	border-style: solid;
+	padding: 24px;
+	margin-bottom: 32px;
+}
+
+
+
+.alert-inverse {
+  .alert-variant(@alert-inverse-bg; @alert-inverse-border; @alert-inverse-text);
+}
+
+
+
+.panel .alert {margin-bottom: 16px;}
+
+.alert-dismissable .close {
+	right: 0;
+	top: 0;
+}
+
+//thumbnails.less
+.thumbnail {
+	margin-bottom: 0;
+}
+
+.img-thumbnail {
+	padding: 4px;
+	border: 0;
+}
+
+//labels.less
+.label {
+	padding: 0em 0.3em;
+	font-family: @label-font-family;
+	font-weight: @label-font-weight;
+	border-radius: @label-border-radius;
+	font-size: 85%;
+	display: inline-block;
+	text-transform: uppercase;
+	line-height: @line-height-small;
+	color: rgba(255, 255, 255, 0.9);
+}
+
+// Colors
+.label-orange {
+	.label-variant(@label-orange-bg);
+}
+.label-lime {
+	.label-variant(@label-lime-bg);
+}
+.label-inverse {
+	.label-variant(@label-inverse-bg);
+}
+.label-teal {
+	.label-variant(@label-teal-bg);
+}
+.label-deeporange {
+	.label-variant(@label-deeporange-bg);
+}
+.label-midnightblue {
+	.label-variant(@label-midnightblue-bg);
+}
+.label-green {
+	.label-variant(@label-green-bg);
+}
+.label-indigo {
+	.label-variant(@label-indigo-bg);
+}
+
+.label-purple {
+	.label-variant(@label-purple-bg);
+}
+
+.label-deeppurple {
+	.label-variant(@label-deeppurple-bg);
+}
+
+.badge {
+	padding: 0px 5px;
+	font-size: @font-size-small;
+	font-family: @badge-font-family;
+}
+
+// Colors
+// Contextual variations (based on label colors)
+
+.badge-primary  {.label-variant(@label-primary-bg);}
+.badge-success  {.label-variant(@label-success-bg);}
+.badge-info     {.label-variant(@label-info-bg);}
+.badge-warning  {.label-variant(@label-warning-bg);}
+.badge-danger   {.label-variant(@label-danger-bg);}
+.badge-orange   {.label-variant(@label-orange-bg);}
+.badge-deeporange   {.label-variant(@label-deeporange-bg);}
+.badge-midnightblue   {.label-variant(@label-midnightblue-bg);}
+.badge-green   {.label-variant(@label-green-bg);}
+.badge-inverse   {.label-variant(@label-inverse-bg);}
+.badge-lime   {.label-variant(@label-lime-bg);}
+.badge-teal   {.label-variant(@label-teal-bg);}
+
+.sidebar nav.widget-body>ul.acc-menu {
+	.badge.badge-primary  {.label-variant(@label-primary-bg);}
+	.badge.badge-indigo  {.label-variant(@label-indigo-bg);}
+	.badge.badge-orange  {.label-variant(@label-orange-bg);}
+	.badge.badge-success  {.label-variant(@label-success-bg);}
+	.badge.badge-info     {.label-variant(@label-info-bg);}
+	.badge.badge-warning  {.label-variant(@label-warning-bg);}
+	.badge.badge-danger   {.label-variant(@label-danger-bg);}
+	.badge.badge-green   {.label-variant(@label-green-bg);}
+	.badge.badge-deeporange   {.label-variant(@label-deeporange-bg);}
+	.badge.badge-lime   {.label-variant(@label-lime-bg);}
+	.badge.badge-midnightblue   {.label-variant(@label-midnightblue-bg);}
+}
+
+//progressbars.less
+.progress-lg {height: 12px !important}
+.progress-sm {height: 4px !important}
+.progress {height: 8px; box-shadow: none;}
+.progress-bar {box-shadow: none;}
+
+//Variants
+.progress-bar-inverse{
+	.progress-bar-variant(@progress-bar-inverse-bg);
+}
+
+.progress-bar-primary{
+	.progress-bar-variant(@progress-bar-bg);
+}
+
+.progress-bar-green {
+	.progress-bar-variant(@progress-bar-green-bg);
+}
+
+.progress-bar-lime {
+	.progress-bar-variant(@progress-bar-lime-bg);
+}
+
+.progress-bar-orange {
+	.progress-bar-variant(@progress-bar-orange-bg);
+}
+
+.progress-bar-purple {
+	.progress-bar-variant(@progress-bar-purple-bg);
+}
+
+.progress-bar-indigo {
+	.progress-bar-variant(@progress-bar-indigo-bg);
+}
+
+.progress-bar-midnightblue {
+	.progress-bar-variant(@progress-bar-midnightblue-bg);
+}
+
+.progress-bar-teal {
+	.progress-bar-variant(@progress-bar-teal-bg);
+}
+
+.progress-bar-deeporange {
+	.progress-bar-variant(@progress-bar-deeporange-bg);
+}
+
+
+
+
+//input-groups.less
+.input-group-addon {
+	background-color: #f7f7f7 !important; 
+	padding: @padding-base-vertical+2  10px @padding-base-vertical;
+	min-width: 40px;
+	color: @gray-dark;
+	
+}
+.input-group-btn > .btn {
+	+ .dropdown-toggle {
+		padding-left: 5px;
+		padding-right: 5px;
+	}
+}
+
+
+//border fix
+.input-group .form-control {z-index: 0;}
+
+.input-group-btn {
+	&:last-child > .btn, &:last-child > .btn-group {
+		margin-left: 0;
+
+		+ .btn, + .btn-group {
+			margin-left: -1px;
+		}
+	}
+
+	&:first-child > .btn, &:first-child > .btn-group {
+		margin-right: 0;
+	}
+}
+
+// Reset rounded corners
+.input-group .form-control:first-child,
+.input-group-addon:first-child,
+.input-group-btn:first-child > .btn,
+.input-group-btn:first-child > .btn-group > .btn,
+.input-group-btn:first-child > .dropdown-toggle,
+.input-group-btn:last-child > .btn:not(:last-child):not(.dropdown-toggle),
+.input-group-btn:last-child > .btn-group:not(:last-child) > .btn {
+  .border-right-radius(0) !important;
+}
+
+.input-group .form-control:last-child,
+.input-group-addon:last-child,
+.input-group-btn:last-child > .btn,
+.input-group-btn:last-child > .btn-group > .btn,
+.input-group-btn:last-child > .dropdown-toggle,
+.input-group-btn:first-child > .btn:not(:first-child),
+.input-group-btn:first-child > .btn-group:not(:first-child) > .btn {
+  .border-left-radius(0) !important;
+}
+
+
+
+//modal
+
+.modal-header {
+	padding: 20px;
+}
+
+.modal-content {
+    .box-shadow(0 2px 12px rgba(0,0,0,.2));
+    border: 0px solid @border-darker;
+}
+
+
+
+//close
+
+.close {
+  float: right;
+  font-size: 20px;
+  line-height: 17px;
+}
+
+
+// Contextual colors
+// .text-gray {
+//   color: @text-gray;
+// }
+
+.carousel-caption {
+	h1, h2, h3, h4, h5, h6,
+	.h1, .h2, .h3, .h4, .h5, .h6, p {
+		color: #fff;
+	}
+}
+
+
+.carousel-text {
+	.carousel-indicators {bottom: 0;}
+	.carousel-control {background-image: none;text-shadow: none;}
+	.item {padding: 20px;}
+
+
+	&.carousel-default {
+		.item {background: #fff;}
+		.carousel-control {color: #000;}
+		.carousel-indicators li {
+			border: 1px solid @border-darker;
+			&.active {background-color: @border-darker;}
+		}
+	}
+
+
+	&.carousel-inverse {
+		.item {background: @brand-inverse;}
+		.carousel-control {color: #fff;}
+		h1, h2, h3, h4, h5, h6,
+		.h1, .h2, .h3, .h4, .h5, .h6, p {
+			color: #fff;
+		}
+	}
+}

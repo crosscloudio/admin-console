@@ -1,0 +1,7 @@
+fragment ContactInfo on Organization {
+  id
+  admin_phone
+  admin_email
+  billing_phone
+  billing_email
+}

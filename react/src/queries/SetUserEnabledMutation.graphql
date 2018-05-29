@@ -1,0 +1,6 @@
+mutation SetUserEnabledMutation($id: String!, $enable: Boolean!) {
+  setUserEnabled(id: $id, enable: $enable) {
+    id
+    is_enabled
+  }
+}
